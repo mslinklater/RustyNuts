@@ -32,7 +32,7 @@ fn another_function() {
 }
 
 fn parameter_function(x: i32) {
-	println!("THe value of x is {}", x);
+	println!("The value of x is {}", x);
 }
 
 fn two_parameters(x: i32, y: i32) {
