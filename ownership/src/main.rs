@@ -14,6 +14,12 @@ fn main() {
     makes_copy(x);
 
     let _reference_to_nothing = dangle();
+
+    let word = first_word(&s);
+
+    s.clear();
+
+    println!("the first word is: {}", word);
 }
 
 fn takes_ownership(some_string: String) {
@@ -43,14 +49,14 @@ fn dangle() -> String {
     s
 }
 
-fn first_word(s: &String) -> usize {
+fn first_word(s: &str) -> &str {
     let bytes = s.as_bytes();
 
     for (i, &item) in bytes.iter().enumerate() {
         if item == b' ' {
-            return i;
+            return &s[0..i];
         }
     }
 
-    s.len()
+    &s[..]
 }
